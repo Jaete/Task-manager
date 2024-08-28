@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VOqS5cfsG76agjZH6h8N/+RzZh+fB+5QQ+s+dMCgEkw=",
+  "Source": "BE-TaskManager",
+  "BasePath": "_content/BE-TaskManager",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
