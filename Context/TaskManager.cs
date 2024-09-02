@@ -9,8 +9,7 @@ namespace BE_TaskManager.Context
         {
             options = options ?? throw new ArgumentNullException();
         }
-
-        //public DbSet<Models.Task>? Tasks { get; set; }
-        public DbSet<User>? Users { get; set; }
+        public DbSet<Models.Task> Tasks { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

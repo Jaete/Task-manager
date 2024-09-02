@@ -9,12 +9,12 @@ public class Task
     public const int TASK_STATUS_DONE = 1;
     public const int TASK_STATUS_FAILED = 2;
     [JsonIgnore] public Guid Id { get; set; }
-    [Required] public string Name { get; set; }
-    [Required] public string Description { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
     public DateTime? Deadline { get; set; } 
     public int Status { get; set; }
     [JsonIgnore] public DateTime CreatedAt { get; set; }
-    [JsonIgnore] public DateTime UpdatedAt { get; set; }    
+    [JsonIgnore] public DateTime UpdatedAt { get; set; }
     public Task(string name, string description, DateTime? deadline){
         Name = name;
         Description = description;
