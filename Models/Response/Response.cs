@@ -15,11 +15,6 @@ namespace BE_TaskManager.Models.Response{
     public class FetchResponse<T> : Response
     {
         public T? Data { get; set; }
-
-        public FetchResponse(HttpStatusCode statusCode, string message) : base(statusCode, message) {
-            StatusCode = statusCode;
-            Message = message;
-        }
         public FetchResponse(T data, HttpStatusCode statusCode, string message) : base(statusCode, message)
         {
             Data = data;

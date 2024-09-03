@@ -55,7 +55,7 @@ namespace BE_TaskManager.Controllers {
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Response), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<FetchResponse<List<User>>>> GetAll(){
+        public async Task<ActionResult<Response>> GetAll(){
             var user = await _userServices.GetAll();
             if(user.StatusCode == HttpStatusCode.NotFound){
                 return NotFound(user);
@@ -67,7 +67,7 @@ namespace BE_TaskManager.Controllers {
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Response), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<FetchResponse<User>>> GetById(Guid id){
+        public async Task<ActionResult<Response>> GetById(Guid id){
             var user = await _userServices.GetById(id);
             if(user.StatusCode == HttpStatusCode.NotFound){
                 return NotFound(user);
@@ -79,7 +79,7 @@ namespace BE_TaskManager.Controllers {
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Response), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<FetchResponse<User>>> GetByEmail(string email){
+        public async Task<ActionResult<Response>> GetByEmail(string email){
             var user = await _userServices.GetByEmail(email);
             if(user.StatusCode == HttpStatusCode.NotFound){
                 return NotFound(user);

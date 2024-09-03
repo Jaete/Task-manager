@@ -83,13 +83,13 @@ namespace BE_TaskManager.Services{
             );
         }
 
-        public async Task<FetchResponse<List<UserResponse>>> GetAll() 
+        public async Task<Response> GetAll() 
         {
             /* FETCH USERS */
             var users = await _context.Users.ToListAsync();
 
             if(users.Count == 0){
-                return new FetchResponse<List<UserResponse>>(
+                return new Response(
                     HttpStatusCode.NotFound,
                     "No user found."
                 );
@@ -115,13 +115,13 @@ namespace BE_TaskManager.Services{
             );
         }
 
-        public async Task<FetchResponse<UserResponse>> GetById(Guid id) 
+        public async Task<Response> GetById(Guid id) 
         {
             /* FETCH USER */
             var user = await _context.Users.FirstOrDefaultAsync(user => user.Id == id);
 
             if(user == null){
-                return new FetchResponse<UserResponse>(
+                return new Response(
                     HttpStatusCode.NotFound, 
                     "User not found."
                 );
@@ -142,13 +142,13 @@ namespace BE_TaskManager.Services{
             );
         }
 
-        public async Task<FetchResponse<UserResponse>> GetByEmail(string email){
+        public async Task<Response> GetByEmail(string email){
 
             /* FETCH USER */
             var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
 
             if(user == null){
-                return new FetchResponse<UserResponse>(
+                return new Response(
                     HttpStatusCode.NotFound, 
                     "User not found."
                 );
